@@ -22,4 +22,7 @@ Small Homework: Try writing some code and saving it on the Pico, also try to sav
 ![Code Example](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Screenshot%202021-07-11%20225544.jpg?raw=true)
 
 In this image you can see a program called "Hello World.py" which is just a simple program I have saved on my pico and you can also see the output I have got from the Pico in the shell.
-## Step 5: 
+## Step 5: Connecting "Peripherals" (or Plugging in LEDs)
+The RPi Pico has a lot of GPIO pins with different communication protocols. You can use these pins to connect stuff like LEDs, sensors and other fancy stuff. The image given below shows the pinout of the Pico and it will help you identify the pin numbers to connect stuff.
+
+![RPi Pico Pinouts](https://cdn-shop.adafruit.com/1200x900/4883-06.png)
