@@ -7,4 +7,4 @@ To run micropython on our RPi Pico, we need to install some firmware on it. We c
 ## Step 3: Play Round!
 > The Pico runs a lightweight interpreter called REPL (Read Evaluate Print Loop). It allows us to write commands and execute them on the Pico in real time just like command line.
 
-So, just try typing '''print("Hello World!)''' in the shell and see the output. That instruction was run on the RPi Pico! :partying_face:
+So, just try typing '''print("Hello World!")''' in the shell and see the output. That instruction was run on the RPi Pico! :partying_face:
