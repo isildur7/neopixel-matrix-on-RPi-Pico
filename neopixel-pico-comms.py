@@ -38,13 +38,13 @@ while True:
                     side = command.split(" ")[1]
                     color = int(command.split(" ")[2][:-1], 0)
                     print("{} half turned on with color {}".format(side, hex(color)))
-                    neo.fill27(color, side)
+                    neo.fill27(side, color)
                     
                 elif command.startswith("FILL18"):
                     side = command.split(" ")[1]
                     color = int(command.split(" ")[2][:-1], 0)
                     print("{} half turned on with color {}".format(side, hex(color)))
-                    neo.fill18(color, side)
+                    neo.fill18(side, color)
                 
                 elif command.startswith("FILL"):
                     color = int(command.split(" ")[1][:-1], 0)
@@ -67,7 +67,7 @@ while True:
                     side = command.split(" ")[1]
                     color = int(command.split(" ")[2][:-1], 0)
                     print("{} half turned on with color {}".format(side, hex(color)))
-                    neo.fillHalf(color, side)
+                    neo.fillHalf(side, color)
                     
                     
                 elif command.startswith("KEY"):
