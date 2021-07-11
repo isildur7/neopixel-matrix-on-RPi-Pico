@@ -17,8 +17,9 @@ While the shell and REPL is great for interacting with the Pico, we want to writ
 Note:
 > If you want a certain piece of code to run automatically whenever you connect the Pico to power, save that code on the Pico with the filename "main.py".
 
-Try writing some code and saving it on the Pico, also try to save it as main.py.
+Small Homework: Try writing some code and saving it on the Pico, also try to save it as main.py.
 
 ![Code Example](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Screenshot%202021-07-11%20225544.jpg?raw=true)
 
 In this image you can see a program called "Hello World.py" which is just a simple program I have saved on my pico and you can also see the output I have got from the Pico in the shell.
+## Step 5: 
