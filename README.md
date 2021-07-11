@@ -14,4 +14,5 @@ While the shell and REPL is great for interacting with the Pico, we want to writ
 2. The probably more interesting way is to save the code on the RPi Pico itself. You can store multiple files of code on the RPi Pico. This can also be done by dragging and dropping as RPi Pico shows up as an external drive to your computer.
 Note:
 > If you want a certain piece of code to run automatically whenever you connect the Pico to power, save that code on the Pico with the filename "main.py".
+
 Try writing some code and saving it on the Pico, also try to save it as main.py.
