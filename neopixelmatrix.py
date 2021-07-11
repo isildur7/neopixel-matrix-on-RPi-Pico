@@ -202,7 +202,7 @@ class NeopixelMatrix:
                     self.led_ar[j] = RGB_to_GRB(int(color))      
 
         else:
-            raise IOError("wrong side parameter, choose either 'L','R','T','B'")
+            raise ValueError("wrong side parameter, choose either 'L','R','T','B'")
         
         self.__set_pattern()
         return
@@ -235,7 +235,7 @@ class NeopixelMatrix:
                     self.led_ar[j] = RGB_to_GRB(int(color))      
 
         else:
-            raise IOError("wrong side parameter, choose either 'L','R','T','B'")
+            raise ValueError("wrong side parameter, choose either 'L','R','T','B'")
         
         self.__set_pattern()
         return
@@ -268,7 +268,7 @@ class NeopixelMatrix:
                     self.led_ar[j] = RGB_to_GRB(int(color))       
 
         else:
-            raise IOError("wrong side parameter, choose either 'L','R','T','B'")
+            raise ValueError("wrong side parameter, choose either 'L','R','T','B'")
         
         self.__set_pattern()
         return
