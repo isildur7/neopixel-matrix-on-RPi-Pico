@@ -1,2 +1,2 @@
-# neopixel-matrix-on-RPi-Pico
-Python library to run Neopixel array from Raspberry Pi
+# Getting Started with RPi Pico
+![RPi Pico](https://pbs.twimg.com/media/EvsYoiOVIAQ0hfh?format=jpg&name=large)
