@@ -34,6 +34,7 @@ The RPi Pico has a lot of GPIO pins with different communication protocols. You 
 
 ## Step 6: The Neopixel Library
 The neopixelmatrix.py is the library file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. The ```__init__``` function initializes the matrix. The argument ```pin``` of this function takes the pin number to which DIN is connected. Note that it must be an integer. The initializer for the class is written for the the 9x9 matrix. If the dimensions of the matrix are changed, change the spiral numbering because some of the later functions won't work otherwise. Neopixel family has several LEDs with the same communication protocol. The 9x9 matrix I use is made from SK6805. Other functions are explained using comments in the neopixelmatrix.py file.
+
 ![9x9 LED Matrix](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/20210712062249_IMG_2791.JPG?raw=true)
 
 ## Step 7: Serial Communication:
@@ -81,6 +82,7 @@ Save the neopixel-pico-comms.py file as main.py on your Pico so it runs automati
 Open the Arduino IDE, go to tools, select the right COM port and then open the serial monitor.
 #### Step 3:
 Set the baud rate to 115200 and select Carriage Return.
+
 ![Serial Monitor](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Screenshot%202021-07-12%20171104.jpg?raw=true)
 #### Step 4: 
 Type INIT PIN followed by your pin number to initialize and you're all set!
