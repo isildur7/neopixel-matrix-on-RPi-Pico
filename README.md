@@ -63,7 +63,7 @@ This command turns ON LEDs in form of a ring. It takes the inputs radius and col
 
 7. ```CIRCLE```:
 
-This command turns ON LEDs in form of a circle. It takes the inputs radius and color (in that order). The minimum radius is 0 and the maximum radius can be 4.\
+This command turns ON LEDs in form of a circle. It takes the inputs radius and color (in that order). The minimum radius is 0 and the maximum radius can be 4.
 
 8. ```HALF```:
 
