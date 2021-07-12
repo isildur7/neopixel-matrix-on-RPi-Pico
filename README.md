@@ -33,4 +33,6 @@ The RPi Pico has a lot of GPIO pins with different communication protocols. You 
 ![RPi Pico Pinouts](https://cdn-shop.adafruit.com/1200x900/4883-06.png)
 
 ## Step 6: The Neopixel Library
-In this section we will be talking about the neopixelmatrix.py file so please refer to that. This library was written for a 9x9 matrix but can be pretty easily used for other matrices with some changes. Below, I have explained all the functions in this library.
+In this section, we will be talking about the library. So please refer to the neopixelmatrix.py file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. Below, I have explained all the functions in this library. You will find these functions in ```class NeopixelMatrix```.
+### 1. ```__ init__```
+
