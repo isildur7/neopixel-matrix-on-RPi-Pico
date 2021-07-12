@@ -63,3 +63,11 @@ This method turns all the LEDs on the matrix off.
 
 #### 9. ```fillCircle```
 
+#### 10. ```ring```
+
+#### 11. ```fillHalf```
+
+#### 12. ```fill27```
+
+#### 13. ```fill18```
+
