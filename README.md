@@ -75,9 +75,13 @@ This turns ON half of the LED matrix. It also takes two inputs side and color ju
 
 This turns ON a particular LED. It takes the LED number and the color as input (in that order). The numbering of the LEDs starts from a corner and snakes downward. Note that the first LED is numbered 0.
 
+![Key](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Inked20210712062249_IMG_2791_LI.jpg?raw=true)
+
 10. ```SPIRALKEY```:
 
 Just like ```KEY``` this too turns ON a particular LED. It takes the LED number and the color as input (in that order). The numbering of the LEDs starts from the center and spirals outwards. Note that the first LED is numbered 0.
+
+![Spiralkey](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Inked20210712062249_IMG_2791_LI2.jpg?raw=true)
 
 ### How to actually do the communication
 #### Step 1:
