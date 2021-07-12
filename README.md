@@ -35,4 +35,7 @@ The RPi Pico has a lot of GPIO pins with different communication protocols. You 
 ## Step 6: The Neopixel Library
 In this section, we will be talking about the library. So please refer to the neopixelmatrix.py file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. Below, I have explained all the functions in this library. You will find these functions in ```class NeopixelMatrix```.
 ### 1. ```__ init__```
+Arguments
+> ```Pin```: This argument has to be an integer. It is the pin number where the DIN of the matrix is connected.
+This function is the initializer for the class and it is written for the the 9x9 matrix. 
 
