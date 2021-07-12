@@ -59,4 +59,17 @@ This command fills the entire matrix with the color you input with it.
 
 6. ```RING```:
 
+This command turns ON LEDs in form of a ring. It takes the inputs radius and color (in that order). The minimum radius is 0 and the maximum radius can be 3.
+
+7. ```CIRCLE```:
+
+This command turns ON LEDs in form of a circle. It takes the inputs radius and color (in that order). The minimum radius is 0 and the maximum radius can be 4.\
+
+8. ```HALF```:
+
+This turns ON half of the LED matrix. It also takes two inputs side and color just like FILL27.
+
+9. ```KEY```:
+
+10. ```SPIRALKEY```:
 
