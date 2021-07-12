@@ -1,15 +1,19 @@
 # Getting Started with RPi Pico
 ![RPi Pico](https://pbs.twimg.com/media/EvsYoiOVIAQ0hfh?format=jpg&name=large)
+
 ## Step 1: Installing Thonny
 Go to [this link](https://thonny.org/) and download thonny. Install it with the default settings. After installation, you can also go to Tools > Options... > Theme & Font to set the appearance and make it comfortable for you.
+
 ## Step 2: Installing Micropython Firmware onto the RPi Pico
 To run micropython on our RPi Pico, we need to install some firmware on it. We can use thonny for this too. To do this, in thonny go to Tools > Options... In options, go to the interpreter tab. At this point, you will also have to plug in your RPi Pico using a USB cable so keep it handy. In this tab, in the bottom right corner will be an option called "Install or update firmware". Click on that and follow the instructions. 
 
 ![Firmware Installation](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Screenshot%202021-07-11%20225353.jpg?raw=true)
+
 ## Step 3: Play Around!
 > The Pico runs a lightweight interpreter called REPL (Read Evaluate Print Loop). It allows us to write commands and execute them on the Pico in real time just like command line.
 
 So, just try typing ```print("Hello World!")``` in the shell and see the output. That instruction was run on the RPi Pico! :partying_face:
+
 ## Step 4: Come Out of Your Shell
 While the shell and REPL is great for interacting with the Pico, we want to write big programs and also save them somewhere. We write these programs in the editor above the shell. After we write a piece of code in the editor, we want to save the it. For that you have two options:
 1. Save the code on your computer and run it on the Pico when you want to. 
@@ -22,7 +26,11 @@ Small Homework: Try writing some code and saving it on the Pico, also try to sav
 ![Code Example](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Screenshot%202021-07-11%20225544.jpg?raw=true)
 
 In this image you can see a program called "Hello World.py" which is just a simple program I have saved on my pico and you can also see the output I have got from the Pico in the shell.
-## Step 5: Connecting "Peripherals" (or Plugging in LEDs)
+
+## Step 5: Connecting "Peripherals" (aka LEDs)
 The RPi Pico has a lot of GPIO pins with different communication protocols. You can use these pins to connect stuff like LEDs, sensors and other fancy stuff. The image given below shows the pinout of the Pico and it will help you identify the pin numbers to connect stuff.
 
 ![RPi Pico Pinouts](https://cdn-shop.adafruit.com/1200x900/4883-06.png)
+
+## Step 6: The Neopixel Library
+In this section we will be talking about the neopixelmatrix.py file so please refer to that. This library was written for a 9x9 matrix but can be pretty easily used for other matrices with some changes. Below, I have explained all the functions in this library.
