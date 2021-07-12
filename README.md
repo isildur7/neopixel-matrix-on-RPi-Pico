@@ -37,8 +37,26 @@ The neopixelmatrix.py is the library file. This library was written for a custom
 
 ## Step 7: Serial Communication:
 We will be communicating with our matrix using serial commands. For this section, refer to the file neopixel-pico-comms.py. Also, we will be using the serial monitor from the Arduino IDE so make sure you have Arduino IDE installed. Below, I have explained the serial commands and their functions from neopixel-pico-comms.py.
-1. INIT PIN:
+1. ```INIT PIN```:
 
-This command initializs our program. Type the pin number at which your DIN is connected after INIT PIN and hit enter (for example INIT PIN 0 if you are connected at pin 0). 
+This command initializs our program. Type the pin number at which your DIN is connected after INIT PIN and hit enter (for example ```INIT PIN 0``` if you are connected at pin 0). If everything goes right, you should see a message like ```LED array at GPIO 0```.
 
-2. 
+2. ```ALL OFF```:
+
+This command turns all the LEDs on the matrix OFF.
+
+3. ```FILL27```:
+
+Two more quantities have to be given with this command. The side and the color (in that order). The side can be one of T, B, R, L i.e. Top, Bottom, Right, Left. The color has to given in the format 0x an then the hex code (this applies to all the functions which have a color input). So an example would be ```FILL27 T 0x123123```. This will turn on the top 27 LEDs on the matrix with the color 123123.
+
+4. ```FILL18```:
+
+This command is very similar to FILL27. It requires the same inputs but the difference is that it turns ON only 18 LEDs instead of 27.
+
+5. ```FILL```:
+
+This command fills the entire matrix with the color you input with it.
+
+6. ```RING```:
+
+
