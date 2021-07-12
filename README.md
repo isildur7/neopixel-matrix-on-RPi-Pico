@@ -49,17 +49,17 @@ This method sends the data from the array to the actual matrix to make the patte
 
 #### 4. ```__setitem__```
 
-### 5. ```getSpiralIndex```
+#### 5. ```getSpiralIndex```
 
-### 6. ```setSpiralIndex```
+#### 6. ```setSpiralIndex```
 
-### 7. ```fill```
+#### 7. ```fill```
 This method fills the whole array or all the LEDs with the color you want.
 Arguments:
 > ```color```: Color you want to set the matrix to. It has to be a hex color.
 
-### 8. ```allOff```
+#### 8. ```allOff```
 This method turns all the LEDs on the matrix off.
 
-### 9. ```fillCircle```
+#### 9. ```fillCircle```
 
