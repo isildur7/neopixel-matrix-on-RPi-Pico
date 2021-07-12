@@ -33,41 +33,8 @@ The RPi Pico has a lot of GPIO pins with different communication protocols. You 
 ![RPi Pico Pinouts](https://cdn-shop.adafruit.com/1200x900/4883-06.png)
 
 ## Step 6: The Neopixel Library
-In this section, we will be talking about the library. So please refer to the neopixelmatrix.py file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. Below, I have explained all the functions in this library. You will find these functions in ```class NeopixelMatrix```.
-#### 1. ```__ init__```
-Arguments:
-> ```pin```: This argument has to be an integer. It is the pin number where the DIN of the matrix is connected.
+The neopixelmatrix.py is the library file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. The ```__init__``` function initializes the matrix. The argument ```pin``` of this function takes the pin number to which DIN is connected. Note that it must be an integer. The initializer for the class is written for the the 9x9 matrix. If the dimensions of the matrix are changed, change the spiral numbering because some of the later functions won't work otherwise. Neopixel family has several LEDs with the same communication protocol. The 9x9 matrix I use is made from SK6805. Other functions are explained using comments in the neopixelmatrix.py file.
 
-If you are using a different matrix:
+## Step 7: Serial Communication:
 
-This function is the initializer for the class and it is written for the the 9x9 matrix. If the dimensions of the matrix are changed, change the spiral numbering because some of the later functions won't work otherwise. Neopixel family has several LEDs with the same communication protocol. The 9x9 matrix I use is made from SK6805.
-
-#### 2. ```__set_pattern```
-This method sends the data from the array to the actual matrix to make the patterns appear on the matrix.
-
-#### 3. ```__getitem__```
-
-#### 4. ```__setitem__```
-
-#### 5. ```getSpiralIndex```
-
-#### 6. ```setSpiralIndex```
-
-#### 7. ```fill```
-This method fills the whole array or all the LEDs with the color you want.
-Arguments:
-> ```color```: Color you want to set the matrix to. It has to be a hex color.
-
-#### 8. ```allOff```
-This method turns all the LEDs on the matrix off.
-
-#### 9. ```fillCircle```
-
-#### 10. ```ring```
-
-#### 11. ```fillHalf```
-
-#### 12. ```fill27```
-
-#### 13. ```fill18```
 
