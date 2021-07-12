@@ -32,66 +32,96 @@ The RPi Pico has a lot of GPIO pins with different communication protocols. You 
 
 ![RPi Pico Pinouts](https://cdn-shop.adafruit.com/1200x900/4883-06.png)
 
-## Step 6: The Neopixel Library
+## The Neopixel Library
 The neopixelmatrix.py is the library file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. The ```__init__``` function initializes the matrix. The argument ```pin``` of this function takes the pin number to which DIN is connected. Note that it must be an integer. The initializer for the class is written for the the 9x9 matrix. If the dimensions of the matrix are changed, change the spiral numbering because some of the later functions won't work otherwise. Neopixel family has several LEDs with the same communication protocol. The 9x9 matrix I use is made from SK6805. Other functions are explained using comments in the neopixelmatrix.py file.
 
 ![9x9 LED Matrix](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/20210712062249_IMG_2791.JPG?raw=true)
 
-## Step 7: Serial Communication:
-We will be communicating with our matrix using serial commands. For this section, refer to the file neopixel-pico-comms.py. Also, we will be using the serial monitor from the Arduino IDE so make sure you have Arduino IDE installed. Below, I have explained the serial commands and their functions from neopixel-pico-comms.py.
-1. ```INIT PIN```:
+## Serial Communication:
+We will be communicating with our matrix using serial commands. For this section, refer to the file neopixel-pico-comms.py. Below are the serial commands and their functions from ```neopixel-pico-comms.py```. You will need to copy this file onto the Pico as ```main.py```. Also copy the ```neopixelmatrix.py``` onto Pico as it is.
 
-This command initializs our program. Type the pin number at which your DIN is connected after INIT PIN and hit enter (for example ```INIT PIN 0``` if you are connected at pin 0). If everything goes right, you should see a message like ```LED array at GPIO 0```.
+
+1. ```INIT PIN <pinNum>```:
+
+This command initializs our program. Type the pin number at which your DIN is connected after INIT PIN and hit enter (for example ```INIT PIN 0``` if you are connected at GP0). If everything goes right, you should see a message like ```LED array at GPIO <pinNum>```. LED color inputs for all the commands *must be* the hex codes (entered as 0xRRGGBB).
 
 2. ```ALL OFF```:
 
 This command turns all the LEDs on the matrix OFF.
 
-3. ```FILL27```:
+3. ```FILL27 <side> <color>```:
 
 Two more quantities have to be given with this command. The side and the color (in that order). The side can be one of T, B, R, L i.e. Top, Bottom, Right, Left. The color has to given in the format 0x an then the hex code (this applies to all the functions which have a color input). So an example would be ```FILL27 T 0x123123```. This will turn on the top 27 LEDs on the matrix with the color 123123.
 
-4. ```FILL18```:
+4. ```FILL18 <side> <color>```:
 
 This command is very similar to FILL27. It requires the same inputs but the difference is that it turns ON only 18 LEDs instead of 27.
 
-5. ```FILL```:
+5. ```FILL <color>```:
 
 This command fills the entire matrix with the color you input with it.
 
-6. ```RING```:
+6. ```RING <radius> <color>```:
 
 This command turns ON LEDs in form of a ring. It takes the inputs radius and color (in that order). The minimum radius is 0 and the maximum radius can be 3.
 
-7. ```CIRCLE```:
+7. ```CIRCLE <radius> <color>```:
 
 This command turns ON LEDs in form of a circle. It takes the inputs radius and color (in that order). The minimum radius is 0 and the maximum radius can be 4.
 
-8. ```HALF```:
+8. ```HALF <side> <color>```:
 
 This turns ON half of the LED matrix. It also takes two inputs side and color just like FILL27.
 
-9. ```KEY```:
+9. ```KEY <index> <color>```:
 
-This turns ON a particular LED. It takes the LED number and the color as input (in that order). The numbering of the LEDs starts from a corner and snakes downward. Note that the first LED is numbered 0.
+This turns ON a particular LED. It takes the LED index and the color as input (in that order). The numbering of the LEDs starts from a corner and snakes downward. Note that the first LED is numbered 0.
 
 ![Key](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Inked20210712062249_IMG_2791_LI.jpg?raw=true)
 
-10. ```SPIRALKEY```:
+10. ```SPIRALKEY <index> <color>```:
 
-Just like ```KEY``` this too turns ON a particular LED. It takes the LED number and the color as input (in that order). The numbering of the LEDs starts from the center and spirals outwards. Note that the first LED is numbered 0.
+Just like ```KEY``` this too turns ON a particular LED. It takes the LED index and the color as input (in that order). The numbering of the LEDs starts from the center and spirals outwards. Note that the first LED is numbered 0.
 
 ![Spiralkey](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Inked20210712062249_IMG_2791_LI2.jpg?raw=true)
 
-### How to actually do the communication
+## How to actually do the communication
+There are two ways: 
+### Using a Serial Monitor like the Arduino Serial Monitor.
 #### Step 1:
-Save the neopixel-pico-comms.py file as main.py on your Pico so it runs automatically when you connect your Pico to power. Also save neopixelmatrix.py on your Pico. Assemble the matrix circuit, connect the Pico to your computer.
+Save the ```neopixel-pico-comms.py``` file as ```main.py``` on your Pico so it runs automatically when you connect your Pico to power. Also save ```neopixelmatrix.py``` on your Pico. Assemble the matrix circuit, connect the Pico to your computer.
 #### Step 2: 
 Open your Arduino IDE, go to tools, select the right COM port and then open the serial monitor.
 #### Step 3:
-Set the baud rate to 115200 and select Carriage Return.
+Set the baud rate to 115200 and select Carriage Return ending.
 
 ![Serial Monitor](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/Screenshot%202021-07-12%20171104.jpg?raw=true)
 #### Step 4: 
-Type INIT PIN followed by your pin number to initialize and you're all set!
+Type INIT PIN followed by your pin number to initialize and then you can type in any commands you want after.
 
+### With another program or script
+Using the protocol above you can open a serial channel and transmit commands to the Pico through another device. For example, using the PySerial library a script could look like:
+```
+import serial
+import time
+
+COM_PORT = 'COM7'
+BAUD_RATE = 115200
+GP_pin = 0
+
+# initialize the LED comm port and the array
+LEDport = serial.Serial(COM_PORT, BAUD_RATE)
+LEDport.write(("INIT PIN "+str(GP_pin)+"\r").encode("ascii"))
+time.sleep(0.5)
+LEDport.write(("ALL OFF\n").encode("ascii"))
+
+# brightfield illumination
+LEDport.write(("CIRCLE 1 0xFFFFFF\r").encode("ascii"))
+time.sleep(1)
+LEDport.write(("ALL OFF\n").encode("ascii"))
+
+# green left half  
+LEDport.write(("FILL24 L 0x00FF00\r").encode("ascii"))
+time.sleep(1)
+LEDport.write(("ALL OFF\n").encode("ascii"))
+```
