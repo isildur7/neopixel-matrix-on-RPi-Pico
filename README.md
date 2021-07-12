@@ -79,7 +79,7 @@ This turns ON half of the LED matrix. It also takes two inputs side and color ju
 #### Step 1:
 Save the neopixel-pico-comms.py file as main.py on your Pico so it runs automatically when you connect your Pico to power. Also save neopixelmatrix.py on your Pico. Assemble the matrix circuit, connect the Pico to your computer.
 #### Step 2: 
-Open the Arduino IDE, go to tools, select the right COM port and then open the serial monitor.
+Open your Arduino IDE, go to tools, select the right COM port and then open the serial monitor.
 #### Step 3:
 Set the baud rate to 115200 and select Carriage Return.
 
