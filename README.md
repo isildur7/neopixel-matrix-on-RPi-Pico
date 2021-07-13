@@ -33,7 +33,19 @@ The RPi Pico has a lot of GPIO pins with different communication protocols. You 
 ![RPi Pico Pinouts](https://cdn-shop.adafruit.com/1200x900/4883-06.png)
 
 ## The Neopixel Library
-The neopixelmatrix.py is the library file. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. The ```__init__``` function initializes the matrix. The argument ```pin``` of this function takes the pin number to which DIN is connected. Note that it must be an integer. The initializer for the class is written for the the 9x9 matrix. If the dimensions of the matrix are changed, change the spiral numbering because some of the later functions won't work otherwise. Neopixel family has several LEDs with the same communication protocol. The 9x9 matrix I use is made from SK6805. Other functions are explained using comments in the neopixelmatrix.py file.
+The ```neopixelmatrix.py``` is the library file you can save on Pico and import in your code. This library was written for a custom-made 9x9 matrix but can be pretty easily used for other matrices with some changes. Start by initializing the matrix with the GP pin number to which DIN is connected. The initializer for the class is written for the the 9x9 matrix. If the dimensions of the matrix are changed, change the spiral numbering because some of the later functions won't work otherwise. Neopixel family has several LEDs with the same communication protocol. The 9x9 matrix I use is made from SK6805. Other functions are explained using comments in the ```neopixelmatrix.py``` file.
+```
+from neopixelmatrix import NeopixelMatrix
+
+neo = NeopixelMatrix(pin=0)
+neo.fill(0x457134)
+neo.allOff()
+neo.setSpiralIndex(52, 0x941350)
+neo.ring(2, 0x135945)
+neo.fillHalf("T", 0x9A845E)
+neo.fill18("B", 0x9A845E)
+neo.allOff()
+```
 
 ![9x9 LED Matrix](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/20210712062249_IMG_2791.JPG?raw=true)
 
