@@ -49,7 +49,7 @@ neo.allOff()
 
 ![9x9 LED Matrix](https://github.com/isildur7/neopixel-matrix-on-RPi-Pico/blob/main/20210712062249_IMG_2791.JPG?raw=true)
 
-## Serial Communication:
+## Serial Communication
 We will be communicating with our matrix using serial commands. For this section, refer to the file neopixel-pico-comms.py. Below are the serial commands and their functions from ```neopixel-pico-comms.py```. You will need to copy this file onto the Pico as ```main.py```. Also copy the ```neopixelmatrix.py``` onto Pico as it is.
 
 
@@ -99,7 +99,7 @@ Just like ```KEY``` this too turns ON a particular LED. It takes the LED index a
 
 ## How to actually do the communication
 There are two ways: 
-### Using a Serial Monitor like the Arduino Serial Monitor.
+### Using a Serial Monitor like the Arduino Serial Monitor
 #### Step 1:
 Save the ```neopixel-pico-comms.py``` file as ```main.py``` on your Pico so it runs automatically when you connect your Pico to power. Also save ```neopixelmatrix.py``` on your Pico. Assemble the matrix circuit, connect the Pico to your computer.
 #### Step 2: 
