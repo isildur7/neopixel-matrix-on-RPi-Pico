@@ -38,7 +38,7 @@ class NeopixelMatrix:
     Object to control a Neopixel LED matrix.
     Multiple patterns and spiral indexing is available.
     """
-    def __init__(self, pin=0):
+    def __init__(self, pin=0, statemachine=0):
         """
         Initializer for the class, needs only global brightness.
         Assumes that we are using one 9x9 Neopixel matrix. Neop-
@@ -56,7 +56,7 @@ class NeopixelMatrix:
         self.numLED = 81
         
         # Create the StateMachine with the ws2812 program, outputting on the given pin.
-        self.sm = StateMachine(0, ws2812, freq=8000000, sideset_base=Pin(pin))
+        self.sm = StateMachine(statemachine, ws2812, freq=8000000, sideset_base=Pin(pin))
         self.sm.active(1)
         
         # array to store the LED data, for all practical purposes this is the matrix.
